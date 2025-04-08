@@ -1,0 +1,91 @@
+/* Classic to Legacy Styles Overrides */
+
+/* Hide redundant information in Unit shops */
+#unit_shop .unit-card p.text-xs:nth-child(3),
+#unit_shop .unit-card p.text-xs:nth-child(4) {
+    display: none;
+}
+
+/* Reduce padding on green bars */
+.block.mb-2.p-4.rounded-lg.bg-gradient-to-r.from-green-900.to-green-500 {
+    padding: 0 5px !important;
+}
+
+/* Hide "Open" links in Battle Log */
+.text-xs.text-right.text-blue-500.hover\:text-blue-700.hover\:underline {
+    display: none;
+}
+
+/* Hide middle top navigation */
+.main > .navigation.h-14.relative.mb-4.rounded.rounded-lg {
+    display: none;
+}
+
+.w-3\/12.lg\:w-2\/12.flex-none.space-y-3 img {
+    height: 50px;
+}
+
+/* Fix top-margin to 60px for all cols */
+#playCenter > .content {
+    margin-top: 60px !important;
+}
+
+/* Fix container as relative container */
+.flex.gap-3 {
+    position: relative;
+}
+
+/* Hide icons */
+sl-icon.text-blue-700.m-1.text-xl,
+.text-yellow-600.m-1.text-xl {
+    display: none;
+}
+
+/* We don't need that much padding */
+.py-2 {
+    padding: 0 !important;
+}
+
+* {
+    border-radius: 0 !important;
+    font-family: Verdana, serif !important;
+    font-weight: normal !important;
+    font-size: 10pt !important;
+}
+
+body {
+    background: url("assets/bg.gif") fixed !important;
+}
+
+b,
+strong {
+    font-weight: bold !important;
+}
+
+a:link,
+input.text-white {
+    text-decoration: underline !important;
+}
+
+.info-box .bg-white {
+    background: none !important;
+}
+
+@media (min-width: 1024px) {
+    /* Override full width */
+    .max-w-screen-lg,
+    .lg\:w-\[980px\] {
+        width: 742px !important;
+    }
+    /* Override width of sidebars */
+    .lg\:w-2\/12, .w-2\/12 {
+        width: 20% !important;
+    }
+}
+
+.font-bold.text-white.px-2.py-1.text-sm.flex.space-x-2 {
+   background-image: url("assets/menutitlebg.gif") !important;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   background-position: center center;
+}
