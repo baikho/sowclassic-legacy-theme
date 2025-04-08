@@ -1,6 +1,7 @@
 # SOW Classic Legacy Theme
 
-A lightweight Chrome extension that restores the nostalgic look of the original Secrets of War Classic UI with a single click.
+| ![SOW Classic Legacy Theme Icon](https://github.com/user-attachments/assets/425e2771-58d5-446b-95ed-dc03ad51f1e0) | **SOW Classic Legacy Theme** is a lightweight Chrome extension that restores the nostalgic look of the original Secrets of War Classic UI with a single click. |
+|----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ---
 
