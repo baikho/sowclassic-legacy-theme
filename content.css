@@ -21,6 +21,17 @@
     display: none;
 }
 
+/* Hide the bg image in middle col */
+.main .bg-slate-700 .absolute {
+    display: none;
+}
+
+/* Use real img dimension sizing in middle col */
+.main .bg-slate-700 img {
+    max-height: 240px;
+    width: auto;
+}
+
 .w-3\/12.lg\:w-2\/12.flex-none.space-y-3 img {
     height: 50px;
 }
