@@ -52,6 +52,12 @@ sl-icon.text-blue-700.m-1.text-xl,
     display: none;
 }
 
+/* Limit player hints box height */
+.bg-yellow-200.p-4.my-4.rounded-lg.shadow-md {
+    height: 70px;
+    overflow-y: scroll;
+}
+
 /* We don't need that much padding */
 .py-2 {
     padding: 0 !important;
