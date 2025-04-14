@@ -4,7 +4,7 @@
         "128": "icon128.png"
     },
     "name": "SOW Classic Legacy Theme",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Overrides the SOW Classic Theme with the Legacy Theme",
     "permissions": [
         "storage"
