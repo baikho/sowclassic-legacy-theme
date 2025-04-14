@@ -70,10 +70,6 @@ sl-icon.text-blue-700.m-1.text-xl,
     font-size: 10pt !important;
 }
 
-body {
-    background: url("assets/bg.gif") fixed !important;
-}
-
 b,
 strong {
     font-weight: bold !important;

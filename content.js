@@ -1,4 +1,3 @@
-// Injects the legacy stylesheet
 function toggleLegacyCSS(enable) {
     const existing = document.getElementById("legacy-css");
 
@@ -15,23 +14,40 @@ function toggleLegacyCSS(enable) {
     }
 }
 
-// Check stored setting and apply if enabled
-chrome.storage.sync.get("legacyEnabled", ({ legacyEnabled = true }) => {
-    toggleLegacyCSS(legacyEnabled);
-});
+function toggleBackgroundCSS(enable) {
+    const existing = document.getElementById("bg-style");
 
-// Reapply on turbo-driven navigation
-document.addEventListener("turbo:load", () => {
-    chrome.storage.sync.get("legacyEnabled", ({ legacyEnabled = true }) => {
+    if (enable && !existing) {
+        const style = document.createElement("style");
+        style.id = "bg-style";
+        style.textContent = `
+            body {
+                background: url('${chrome.runtime.getURL("assets/bg.gif")}') fixed !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    if (!enable && existing) {
+        existing.remove();
+    }
+}
+
+function applyStoredSettings() {
+    chrome.storage.sync.get(["legacyEnabled", "backgroundEnabled"], ({ legacyEnabled = true, backgroundEnabled = false }) => {
         toggleLegacyCSS(legacyEnabled);
+        toggleBackgroundCSS(backgroundEnabled);
     });
-});
+}
 
-// Listen for popup toggle messages
+applyStoredSettings();
+document.addEventListener("turbo:load", applyStoredSettings);
+
 chrome.runtime.onMessage.addListener((message) => {
-    if (message.action === "enableLegacy") {
-        toggleLegacyCSS(true);
-    } else if (message.action === "disableLegacy") {
-        toggleLegacyCSS(false);
+    switch (message.action) {
+        case "enableLegacy": toggleLegacyCSS(true); break;
+        case "disableLegacy": toggleLegacyCSS(false); break;
+        case "enableBackground": toggleBackgroundCSS(true); break;
+        case "disableBackground": toggleBackgroundCSS(false); break;
     }
 });
